@@ -52,7 +52,7 @@ body {
   #start, #pause{
     cursor: pointer;
     border: none;
-    margin: 20px 0px 0px;
+    
     padding: 0px 12px;
     border-radius: 4px;
     box-shadow: rgb(235, 235, 235) 0px 6px 0px;
