@@ -1,4 +1,9 @@
-import { startTimer, pauseTimer, resetTimer } from "./TimerPomodoro.js";
+import {
+  startTimer,
+  pauseTimer,
+  resetTimer,
+  initializeTimer,
+} from "./TimerPomodoro.js";
 
 const start = document.getElementById("start");
 start.addEventListener("click", function () {
@@ -14,3 +19,5 @@ const reset = document.getElementById("reset");
 reset.addEventListener("click", function () {
   resetTimer();
 });
+
+initializeTimer();

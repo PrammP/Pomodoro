@@ -1,12 +1,19 @@
 let timer;
-let totalTime = 15 * 60;
-let currentTime = totalTime;
+let totalTime;
+let currentTime;
 let isPaused = false;
 let turn = 0;
 let bigturn = 0;
 let pauseTime = 0;
 
+function updateTotalTime() {
+  const pomodoroInput = document.getElementById("pomodoroInput").value;
+  totalTime = parseInt(pomodoroInput) * 60;
+  currentTime = totalTime;
+}
+
 export function startTimer() {
+  updateTotalTime();
   if (timer) clearInterval(timer);
   isPaused = false;
   timer = setInterval(updateTimer, 1000);
@@ -15,11 +22,13 @@ export function startTimer() {
 export function startTimerPause() {
   clearInterval(timer);
   isPaused = true;
+  const shortPause = parseInt(document.getElementById("shortPause").value) * 60;
+  const longPause = parseInt(document.getElementById("longPause").value) * 60;
   if (turn < 3) {
-    pauseTime = 5 * 60;
+    pauseTime = shortPause;
     turn += 1;
   } else {
-    pauseTime = 20 * 60;
+    pauseTime = longPause;
     bigturn += 1;
     turn = 0;
   }
@@ -47,9 +56,15 @@ export function pauseTimer() {
   isPaused = true;
   clearInterval(timer);
 }
-
+export function initializeTimer() {
+  updateTotalTime();
+  let minutes = Math.floor(currentTime / 60);
+  let seconds = currentTime % 60;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+  document.getElementById("timer").innerText = `${minutes} : ${seconds}`;
+}
 export function resetTimer() {
-  currentTime = totalTime;
+  updateTotalTime();
   clearInterval(timer);
   isPaused = true;
   let minutes = Math.floor(currentTime / 60);

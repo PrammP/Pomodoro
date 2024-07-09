@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="options">
+        <button id="option">&#9881;</button>
+        <input type="text" name="longPause" id="longPause" value="20">
+        <label for="longPause">Temps de la grosse pause :</label>
+        <input type="text" name="shortPause" id="shortPause" value="5">
+        <label for="shortPause">Temps de la petite pause :</label>
+        <input type="text" name="pomodoro" id="pomodoroInput" value="15">
+        <label for="pomodoro">Temps de travail :</label> 
+    </div>
+   
     <div id="container">
         <div id="containButton">
             <button id="pomodoro">Pomodoro</button>
             <button id="shortBreak">Petite Pause</button>
             <button id="longBreak">Grosse Pause</button>
         </div>
-        <div id="timer">15 : 00</div>
+        <div id="timer"></div>
         <div id="playPauseRes">
         <button id="start">Start</button>
         <button id="pause">Pause</button>
@@ -22,5 +32,6 @@
     </div>
    
     <script  type="module" src="module/main.js"></script>
+    <script type="module" src="module/TimerPomodoro.js"></script>
 </body>
 </html>
