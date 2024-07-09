@@ -5,6 +5,8 @@ import {
   initializeTimer,
 } from "./TimerPomodoro.js";
 
+import { optionsOnOff } from "./options.js";
+
 const start = document.getElementById("start");
 start.addEventListener("click", function () {
   startTimer();
@@ -20,4 +22,7 @@ reset.addEventListener("click", function () {
   resetTimer();
 });
 
+document.getElementById("option").addEventListener("click", function () {
+  optionsOnOff();
+});
 initializeTimer();
