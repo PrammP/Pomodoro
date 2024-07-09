@@ -64,6 +64,7 @@ body {
     transform: rotate(45deg);
     transition: 0.3s;
   }
+  
   #options{
     position: absolute;
     top: 15px;
