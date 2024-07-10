@@ -11,18 +11,13 @@
     <div id="options">
         <input type="text" name="longPause" id="longPause" value="20">
         <label for="longPause">Temps de la grosse pause :</label>
-        <input type="text" name="shortPause" id="shortPause" value="5">
+        <input type="text" name="shortPause" id="shortPause" maxlength="3" value="5">
         <label for="shortPause">Temps de la petite pause :</label>
-        <input type="text" name="pomodoro" id="pomodoroInput" value="15">
+        <input type="text" name="pomodoro" id="pomodoroInput" maxlength="3" value="15">
         <label for="pomodoro">Temps de travail :</label> 
     </div>
    
     <div id="container">
-        <div id="containButton">
-            <button id="pomodoro">Pomodoro</button>
-            <button id="shortBreak">Petite Pause</button>
-            <button id="longBreak">Grosse Pause</button>
-        </div>
         <div id="timer"></div>
         <div id="playPauseRes">
         <button id="start">Start</button>

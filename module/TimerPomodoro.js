@@ -6,7 +6,7 @@ let turn = 0;
 let bigturn = 0;
 let pauseTime = 0;
 
-function updateTotalTime() {
+export function updateTotalTime() {
   const pomodoroInput = document.getElementById("pomodoroInput").value;
   totalTime = parseInt(pomodoroInput) * 60;
   currentTime = totalTime;
@@ -63,6 +63,7 @@ export function initializeTimer() {
   seconds = seconds < 10 ? "0" + seconds : seconds;
   document.getElementById("timer").innerText = `${minutes} : ${seconds}`;
 }
+
 export function resetTimer() {
   updateTotalTime();
   clearInterval(timer);

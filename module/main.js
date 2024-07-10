@@ -3,6 +3,7 @@ import {
   pauseTimer,
   resetTimer,
   initializeTimer,
+  updateTotalTime,
 } from "./TimerPomodoro.js";
 
 import { optionsOnOff } from "./options.js";
@@ -24,5 +25,14 @@ reset.addEventListener("click", function () {
 
 document.getElementById("option").addEventListener("click", function () {
   optionsOnOff();
+});
+
+document.getElementById("pomodoroInput").addEventListener("input", () => {
+  if (document.getElementById("pomodoroInput").value === "") {
+    document.getElementById("timer").innerText = "00 : 00";
+  } else {
+    updateTotalTime();
+    initializeTimer();
+  }
 });
 initializeTimer();
