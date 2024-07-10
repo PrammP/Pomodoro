@@ -4,18 +4,18 @@ body {
     margin: 0;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: orange;
   }
   #container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 500px;
-    height: 300px;
+    height: 250px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 20px 20px 20px 20px;
     font-size: 100px;
@@ -23,6 +23,7 @@ body {
     font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     padding: 30px 0 30px 0;
     color: white;
+    padding-bottom: 40px;
   }
   #timer{
     margin-top: 30px;
@@ -48,13 +49,14 @@ body {
     top: 15px;
     left: 15px;
     height: 220px;
-    width: 200px;
+    width: 150px;
     display: none;
     flex-direction: column-reverse;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 20px 20px 20px 20px;
     padding: 10px;
     color: white;
+    padding-top: 60px;
     justify-content: flex-start;
     padding-bottom: 20px;
     font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -73,7 +75,6 @@ body {
   #start, #pause{
     cursor: pointer;
     border: none;
-    
     padding: 0px 12px;
     border-radius: 4px;
     box-shadow: rgb(235, 235, 235) 0px 6px 0px;
@@ -92,7 +93,9 @@ body {
     transform: translateY(5px);
 }
 
-
+#playPauseRes{
+  margin-top: -45px;
+}
 #reset {
   cursor: pointer;
   border: none;
@@ -111,4 +114,207 @@ body {
   font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
   
+.containerTodo{
 
+ font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+.todo-app{
+  width: 100%;
+  max-width: 540px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 25px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+.todo-app h2{
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.todo-app h2 img {
+  width: 30px;
+  margin-left: 10px;
+}
+.row{
+  color: white;
+  font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  padding-left: 20px ;
+  margin-bottom: 25px;
+}
+.inputTodo{
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+#buttonTodo{
+  
+  font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+ font-weight: bold;
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: white;
+  color: rgb(186, 73, 73);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+ul li {
+  color: white;
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  height: 35px;
+  margin-top: 10px;
+}
+ul li #text {
+  width: 80%;
+}
+
+ul li::before{
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image:url(img/unchecked.png) ;
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+ul li.checked{
+  color: white;
+  text-decoration: line-through;
+}
+
+ul li.checked::before{
+  background-image: url(img/checked.png);
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li p {
+  font-size: 10px;
+}
+
+ul li span:hover{
+  background: white;
+}
+ul li span.edit {
+  line-height: 30px;
+  margin-top: 5px;
+  position: absolute;
+  right: 40px; 
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+ul li span.edit:hover {
+  background: white;
+}
+.finished-date {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.edit-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 17px;
+}
+
+
+@media (max-width: 480px) {
+  body{
+    flex-direction: column;
+  }
+  .row{
+      flex-direction: column;
+      max-height: 35px;
+      align-items: center;
+  }
+  input{
+      margin-right: 130px;
+  }
+  .todo-app {
+      margin: 30px auto 20px;
+      padding: 20px 15px 40px;
+  }
+
+  .todo-app h2 {
+      font-size: 20px;
+  }
+
+  .todo-app h2 img {
+      width: 25px;
+  }
+
+  button {
+      padding: 10px 30px;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-right: 10px;
+  }
+  ul{
+      margin-top: 80px;
+  }
+  ul li {
+      font-size: 13px;
+      padding: 8px 4px 8px 30px;
+  }
+
+  ul li::before {
+      height: 20px;
+      width: 20px;
+      top: 8px;
+      left: 4px;
+  }
+
+  ul li span {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      line-height: 30px;
+  }
+}
+@media (max-width: 900px) {
+  body{
+    flex-direction: column;
+  }
+}

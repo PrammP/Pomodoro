@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="img/unchecked.png" as="image">
+<link rel="preload" href="img/checked.png" as="image">
 </head>
 <body>
     <button id="option">&#9881;</button>
@@ -25,7 +27,21 @@
         <button id="reset">&#8634;</button>
     </div>
     </div>
-   
+
+    <div class="containerTodo">
+        <div class="todo-app">
+            <h2>To-Do List <img src="img/icon.png"></h2>
+            <div class="row">
+                <input class="inputTodo" type="text" id="input-box" maxlength="31" placeholder="Tâche à ajouter...">
+                <button id="buttonTodo">Ajouter</button>
+            </div>
+            
+            <ul id="list-container">
+               
+            </ul>
+        </div>
+    </div>
+    <script type="module" src="module/todo.js"></script>
     <script  type="module" src="module/main.js"></script>
     <script type="module" src="module/TimerPomodoro.js"></script>
 </body>
